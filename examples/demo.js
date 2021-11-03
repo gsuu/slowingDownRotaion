@@ -1,4 +1,4 @@
-import slowingDownRotation from '../slowingDownRotation';
+import slowingDownRotation from '../lib/slowingDownRotation';
 
 const roulette = new slowingDownRotation({
   wrapperElement: document.querySelector('.demo__wrapper'),
