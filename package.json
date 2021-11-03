@@ -1,0 +1,11 @@
+{
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "clean": "rm -rf /dist *",
+    "build": "yarn clean && parcel build src/demo/*.html"
+  },
+  "devDependencies": {
+    "@parcel/babel-preset-env": "^2.0.0",
+    "parcel": "^2.0.0"
+  }
+}
