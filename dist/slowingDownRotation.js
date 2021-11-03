@@ -76,8 +76,7 @@ var slowingDownRotation = /*#__PURE__*/function () {
       }
 
       options.startCallback();
-
-      this._roll(options.playCount, options.speed);
+      this.roll(options.playCount, options.speed);
     }
   }, {
     key: "stop",
@@ -94,16 +93,14 @@ var slowingDownRotation = /*#__PURE__*/function () {
         if (options.itemElements.length >= options.stopIndex && options.stopIndex >= 0) {
           options.isSlowdown = true;
           options.currentPlayCount = 0;
-
-          this._roll(Math.max(1, Math.ceil(20 / options.itemElements.length)), options.speed);
-
+          this.roll(Math.max(1, Math.ceil(20 / options.itemElements.length)), options.speed);
           options.slowDownCallback();
         }
       }
     }
   }, {
-    key: "_reset",
-    value: function _reset() {
+    key: "reset",
+    value: function reset() {
       var options = this.options;
       options.playCount = defaultProperty.playCount;
       options.currentIndex = defaultProperty.currentIndex;
@@ -117,8 +114,8 @@ var slowingDownRotation = /*#__PURE__*/function () {
       }
     }
   }, {
-    key: "_roll",
-    value: function _roll(_count, _speed) {
+    key: "roll",
+    value: function roll(_count, _speed) {
       var _this = this;
 
       var options = this.options;
@@ -131,8 +128,7 @@ var slowingDownRotation = /*#__PURE__*/function () {
 
       if (options.isSlowdown) {
         if (options.currentPlayCount > _count && options.currentIndex - 1 === options.stopIndex) {
-          this._reset();
-
+          this.reset();
           return;
         }
 
@@ -144,15 +140,14 @@ var slowingDownRotation = /*#__PURE__*/function () {
         }
       }
 
-      this._output();
-
+      this.output();
       options.countTimer = setTimeout(function () {
-        _this._roll(_count, _speed);
+        _this.roll(_count, _speed);
       }, _speed);
     }
   }, {
-    key: "_output",
-    value: function _output() {
+    key: "output",
+    value: function output() {
       var options = this.options;
       var activeClass = 'is-active';
       var prevIndex = options.currentIndex - 1;
