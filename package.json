@@ -1,11 +1,27 @@
 {
+  "name": "slowing-down-rotation",
+  "version": "0.0.1",
   "author": "jisu kwak <gsuu.kwak@gmail.com> (gsuu.kwak@gmail.com)",
   "license": "MIT",
   "main": "dist/slowingDownRotation.min.js",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gsuu/slowingDownRotaion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gsuu/slowingDownRotaion/issues",
+    "email": "gsuu.kwak@gmail.com"
+  },
+  "keywords": ["javascript","animation","slowingDown","html","css"],
+  "files": [
+    "dist",
+    "examples",
+    "lib"
+  ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "yarn clean && rollup -c"
+    "build": "yarn clean && rollup -c",
+    "prepare": "yarn build"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
