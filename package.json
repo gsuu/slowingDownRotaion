@@ -1,6 +1,6 @@
 {
   "name": "slowing-down-rotation",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "jisu kwak <gsuu.kwak@gmail.com> (gsuu.kwak@gmail.com)",
   "license": "MIT",
   "main": "dist/slowingDownRotation.esm.js",
@@ -25,6 +25,8 @@
     "javascript",
     "animation",
     "slowingDown",
+    "roulette",
+    "simple",
     "html",
     "css"
   ],

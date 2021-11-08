@@ -949,7 +949,7 @@
   var defaultProperty = {
     currentPlayCount: null,
     playCount: null,
-    currentIndex: null,
+    currentIndex: 0,
     stopIndex: null,
     slowDownStartindex: null,
     isSlowdown: false,
@@ -974,9 +974,7 @@
     function SlowingDownRotation(options) {
       _classCallCheck(this, SlowingDownRotation);
 
-      assign(this, {
-        options: assign({}, defaultProperty, defaultSetting, options)
-      });
+      this.updateOption(options);
     }
 
     _createClass(SlowingDownRotation, [{
@@ -987,6 +985,13 @@
         if (options.autoStart) {
           this.start();
         }
+      }
+    }, {
+      key: "updateOption",
+      value: function updateOption(options) {
+        assign(this, {
+          options: assign({}, defaultProperty, defaultSetting, options)
+        });
       }
     }, {
       key: "start",
@@ -1019,6 +1024,7 @@
           if (options.itemElements.length >= options.stopIndex && options.stopIndex >= 0) {
             options.isSlowdown = true;
             options.currentPlayCount = 0;
+            options.itemElements[options.currentIndex].classList.remove('is-active');
             this.roll(Math.max(1, Math.ceil(20 / options.itemElements.length)), options.speed);
             options.slowDownCallback();
           }
@@ -1045,12 +1051,6 @@
         var _this = this;
 
         var options = this.options;
-        options.currentIndex++;
-
-        if (options.currentIndex >= options.itemElements.length) {
-          options.currentIndex = 0;
-          options.currentPlayCount++;
-        }
 
         if (options.isSlowdown) {
           if (options.currentPlayCount > _count && options.currentIndex - 1 === options.stopIndex) {
@@ -1067,6 +1067,13 @@
         }
 
         this.output();
+        options.currentIndex++;
+
+        if (options.currentIndex >= options.itemElements.length) {
+          options.currentIndex = 0;
+          options.currentPlayCount++;
+        }
+
         options.countTimer = setTimeout(function () {
           _this.roll(_count, _speed);
         }, _speed);

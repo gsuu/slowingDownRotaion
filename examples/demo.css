@@ -6,3 +6,11 @@
 ul, ol, dl {
   list-style: none;
 }
+
+.sdr-motion__item {
+  display: none;
+}
+
+.sdr-motion__item.is-active {
+  display: block;
+}
