@@ -8,9 +8,11 @@
     targetElement: document.querySelector('.sdr-motion__target'), // element node
     itemElements: document.querySelectorAll('.sdr-motion__item'), // element node list
     speed: 100, // 모션 기본 스피드
+    startIndex: 0, // 시작 인덱스
     stopIndex : 0, // 정지 될 인덱스
     playCount: 3, // 반복 횟수
     autoStart: false, // 자동시작여부
+    reverse: false, // 반대방향으로 이동 여부
     stopCallback: () => {},
     startCallback: () => {},
     slowDownCallback: () => {}

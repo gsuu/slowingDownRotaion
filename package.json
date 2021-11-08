@@ -29,7 +29,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "yarn clean && rollup -c",
-    "prepare": "yarn build"
+    "prepare": "yarn build && npm version patch"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

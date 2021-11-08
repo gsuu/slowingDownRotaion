@@ -104,22 +104,22 @@ var SlowingDownRotation = (function () {
     };
   };
 
-  var uncurryThis$9 = functionUncurryThis;
+  var uncurryThis$a = functionUncurryThis;
 
-  var toString$1 = uncurryThis$9({}.toString);
-  var stringSlice = uncurryThis$9(''.slice);
+  var toString$1 = uncurryThis$a({}.toString);
+  var stringSlice = uncurryThis$a(''.slice);
 
   var classofRaw = function (it) {
     return stringSlice(toString$1(it), 8, -1);
   };
 
   var global$i = global$j;
-  var uncurryThis$8 = functionUncurryThis;
+  var uncurryThis$9 = functionUncurryThis;
   var fails$4 = fails$6;
-  var classof = classofRaw;
+  var classof$1 = classofRaw;
 
   var Object$4 = global$i.Object;
-  var split = uncurryThis$8(''.split);
+  var split = uncurryThis$9(''.split);
 
   // fallback for non-array-like ES3 and non-enumerable old V8 strings
   var indexedObject = fails$4(function () {
@@ -127,7 +127,7 @@ var SlowingDownRotation = (function () {
     // eslint-disable-next-line no-prototype-builtins -- safe
     return !Object$4('z').propertyIsEnumerable(0);
   }) ? function (it) {
-    return classof(it) == 'String' ? split(it, '') : Object$4(it);
+    return classof$1(it) == 'String' ? split(it, '') : Object$4(it);
   } : Object$4;
 
   var global$h = global$j;
@@ -155,9 +155,9 @@ var SlowingDownRotation = (function () {
     return typeof it == 'object' ? it !== null : isCallable$7(it);
   };
 
-  var path$5 = {};
+  var path$6 = {};
 
-  var path$4 = path$5;
+  var path$5 = path$6;
   var global$g = global$j;
   var isCallable$6 = isCallable$8;
 
@@ -166,13 +166,13 @@ var SlowingDownRotation = (function () {
   };
 
   var getBuiltIn$2 = function (namespace, method) {
-    return arguments.length < 2 ? aFunction(path$4[namespace]) || aFunction(global$g[namespace])
-      : path$4[namespace] && path$4[namespace][method] || global$g[namespace] && global$g[namespace][method];
+    return arguments.length < 2 ? aFunction(path$5[namespace]) || aFunction(global$g[namespace])
+      : path$5[namespace] && path$5[namespace][method] || global$g[namespace] && global$g[namespace][method];
   };
 
-  var uncurryThis$7 = functionUncurryThis;
+  var uncurryThis$8 = functionUncurryThis;
 
-  var objectIsPrototypeOf = uncurryThis$7({}.isPrototypeOf);
+  var objectIsPrototypeOf = uncurryThis$8({}.isPrototypeOf);
 
   var getBuiltIn$1 = getBuiltIn$2;
 
@@ -232,7 +232,7 @@ var SlowingDownRotation = (function () {
   var global$e = global$j;
   var getBuiltIn = getBuiltIn$2;
   var isCallable$5 = isCallable$8;
-  var isPrototypeOf = objectIsPrototypeOf;
+  var isPrototypeOf$1 = objectIsPrototypeOf;
   var USE_SYMBOL_AS_UID$1 = useSymbolAsUid;
 
   var Object$3 = global$e.Object;
@@ -241,7 +241,7 @@ var SlowingDownRotation = (function () {
     return typeof it == 'symbol';
   } : function (it) {
     var $Symbol = getBuiltIn('Symbol');
-    return isCallable$5($Symbol) && isPrototypeOf($Symbol.prototype, Object$3(it));
+    return isCallable$5($Symbol) && isPrototypeOf$1($Symbol.prototype, Object$3(it));
   };
 
   var global$d = global$j;
@@ -338,10 +338,10 @@ var SlowingDownRotation = (function () {
     return Object$2(requireObjectCoercible(argument));
   };
 
-  var uncurryThis$6 = functionUncurryThis;
+  var uncurryThis$7 = functionUncurryThis;
   var toObject$1 = toObject$2;
 
-  var hasOwnProperty = uncurryThis$6({}.hasOwnProperty);
+  var hasOwnProperty = uncurryThis$7({}.hasOwnProperty);
 
   // `HasOwnProperty` abstract operation
   // https://tc39.es/ecma262/#sec-hasownproperty
@@ -349,11 +349,11 @@ var SlowingDownRotation = (function () {
     return hasOwnProperty(toObject$1(it), key);
   };
 
-  var uncurryThis$5 = functionUncurryThis;
+  var uncurryThis$6 = functionUncurryThis;
 
   var id = 0;
   var postfix = Math.random();
-  var toString = uncurryThis$5(1.0.toString);
+  var toString = uncurryThis$6(1.0.toString);
 
   var uid$1 = function (key) {
     return 'Symbol(' + (key === undefined ? '' : key) + ')_' + toString(++id + postfix, 36);
@@ -490,10 +490,10 @@ var SlowingDownRotation = (function () {
 
   var isForced_1 = isForced$1;
 
-  var uncurryThis$4 = functionUncurryThis;
+  var uncurryThis$5 = functionUncurryThis;
   var aCallable = aCallable$2;
 
-  var bind$1 = uncurryThis$4(uncurryThis$4.bind);
+  var bind$1 = uncurryThis$5(uncurryThis$5.bind);
 
   // optional / simple context binding
   var functionBindContext = function (fn, that) {
@@ -554,11 +554,11 @@ var SlowingDownRotation = (function () {
 
   var global$2 = global$j;
   var apply$1 = functionApply;
-  var uncurryThis$3 = functionUncurryThis;
+  var uncurryThis$4 = functionUncurryThis;
   var isCallable$1 = isCallable$8;
   var getOwnPropertyDescriptor = objectGetOwnPropertyDescriptor.f;
   var isForced = isForced_1;
-  var path$3 = path$5;
+  var path$4 = path$6;
   var bind = functionBindContext;
   var createNonEnumerableProperty = createNonEnumerableProperty$1;
   var hasOwn$1 = hasOwnProperty_1;
@@ -600,7 +600,7 @@ var SlowingDownRotation = (function () {
 
     var nativeSource = GLOBAL ? global$2 : STATIC ? global$2[TARGET] : (global$2[TARGET] || {}).prototype;
 
-    var target = GLOBAL ? path$3 : path$3[TARGET] || createNonEnumerableProperty(path$3, TARGET, {})[TARGET];
+    var target = GLOBAL ? path$4 : path$4[TARGET] || createNonEnumerableProperty(path$4, TARGET, {})[TARGET];
     var targetPrototype = target.prototype;
 
     var FORCED, USE_NATIVE, VIRTUAL_PROTOTYPE;
@@ -628,7 +628,7 @@ var SlowingDownRotation = (function () {
       // wrap global constructors for prevent changs in this version
       else if (options.wrap && USE_NATIVE) resultProperty = wrapConstructor(sourceProperty);
       // make static versions for prototype methods
-      else if (PROTO && isCallable$1(sourceProperty)) resultProperty = uncurryThis$3(sourceProperty);
+      else if (PROTO && isCallable$1(sourceProperty)) resultProperty = uncurryThis$4(sourceProperty);
       // default case
       else resultProperty = sourceProperty;
 
@@ -641,11 +641,11 @@ var SlowingDownRotation = (function () {
 
       if (PROTO) {
         VIRTUAL_PROTOTYPE = TARGET + 'Prototype';
-        if (!hasOwn$1(path$3, VIRTUAL_PROTOTYPE)) {
-          createNonEnumerableProperty(path$3, VIRTUAL_PROTOTYPE, {});
+        if (!hasOwn$1(path$4, VIRTUAL_PROTOTYPE)) {
+          createNonEnumerableProperty(path$4, VIRTUAL_PROTOTYPE, {});
         }
         // export virtual prototype methods
-        createNonEnumerableProperty(path$3[VIRTUAL_PROTOTYPE], key, sourceProperty);
+        createNonEnumerableProperty(path$4[VIRTUAL_PROTOTYPE], key, sourceProperty);
         // export real prototype methods
         if (options.real && targetPrototype && !targetPrototype[key]) {
           createNonEnumerableProperty(targetPrototype, key, sourceProperty);
@@ -654,19 +654,19 @@ var SlowingDownRotation = (function () {
     }
   };
 
-  var $$2 = _export;
+  var $$3 = _export;
   var DESCRIPTORS$1 = descriptors;
   var objectDefinePropertyModile = objectDefineProperty;
 
   // `Object.defineProperty` method
   // https://tc39.es/ecma262/#sec-object.defineproperty
-  $$2({ target: 'Object', stat: true, forced: !DESCRIPTORS$1, sham: !DESCRIPTORS$1 }, {
+  $$3({ target: 'Object', stat: true, forced: !DESCRIPTORS$1, sham: !DESCRIPTORS$1 }, {
     defineProperty: objectDefinePropertyModile.f
   });
 
-  var path$2 = path$5;
+  var path$3 = path$6;
 
-  var Object$1 = path$2.Object;
+  var Object$1 = path$3.Object;
 
   var defineProperty$4 = defineProperty$6.exports = function defineProperty(it, key, desc) {
     return Object$1.defineProperty(it, key, desc);
@@ -674,13 +674,13 @@ var SlowingDownRotation = (function () {
 
   if (Object$1.defineProperty.sham) defineProperty$4.sham = true;
 
-  var parent$2 = defineProperty$6.exports;
+  var parent$3 = defineProperty$6.exports;
 
-  var defineProperty$3 = parent$2;
+  var defineProperty$3 = parent$3;
 
-  var parent$1 = defineProperty$3;
+  var parent$2 = defineProperty$3;
 
-  var defineProperty$2 = parent$1;
+  var defineProperty$2 = parent$2;
 
   var defineProperty$1 = defineProperty$2;
 
@@ -778,13 +778,13 @@ var SlowingDownRotation = (function () {
 
   var hiddenKeys$1 = {};
 
-  var uncurryThis$2 = functionUncurryThis;
+  var uncurryThis$3 = functionUncurryThis;
   var hasOwn = hasOwnProperty_1;
   var toIndexedObject = toIndexedObject$3;
   var indexOf = arrayIncludes.indexOf;
   var hiddenKeys = hiddenKeys$1;
 
-  var push = uncurryThis$2([].push);
+  var push = uncurryThis$3([].push);
 
   var objectKeysInternal = function (object, names) {
     var O = toIndexedObject(object);
@@ -826,7 +826,7 @@ var SlowingDownRotation = (function () {
   objectGetOwnPropertySymbols.f = Object.getOwnPropertySymbols;
 
   var DESCRIPTORS = descriptors;
-  var uncurryThis$1 = functionUncurryThis;
+  var uncurryThis$2 = functionUncurryThis;
   var call = functionCall;
   var fails = fails$6;
   var objectKeys = objectKeys$1;
@@ -839,7 +839,7 @@ var SlowingDownRotation = (function () {
   var $assign = Object.assign;
   // eslint-disable-next-line es/no-object-defineproperty -- required for testing
   var defineProperty = Object.defineProperty;
-  var concat = uncurryThis$1([].concat);
+  var concat = uncurryThis$2([].concat);
 
   // `Object.assign` method
   // https://tc39.es/ecma262/#sec-object.assign
@@ -882,25 +882,79 @@ var SlowingDownRotation = (function () {
     } return T;
   } : $assign;
 
-  var $$1 = _export;
+  var $$2 = _export;
   var assign$3 = objectAssign;
 
   // `Object.assign` method
   // https://tc39.es/ecma262/#sec-object.assign
   // eslint-disable-next-line es/no-object-assign -- required for testing
-  $$1({ target: 'Object', stat: true, forced: Object.assign !== assign$3 }, {
+  $$2({ target: 'Object', stat: true, forced: Object.assign !== assign$3 }, {
     assign: assign$3
   });
 
-  var path$1 = path$5;
+  var path$2 = path$6;
 
-  var assign$2 = path$1.Object.assign;
+  var assign$2 = path$2.Object.assign;
 
-  var parent = assign$2;
+  var parent$1 = assign$2;
 
-  var assign$1 = parent;
+  var assign$1 = parent$1;
 
   var assign = assign$1;
+
+  var classof = classofRaw;
+
+  // `IsArray` abstract operation
+  // https://tc39.es/ecma262/#sec-isarray
+  // eslint-disable-next-line es/no-array-isarray -- safe
+  var isArray$1 = Array.isArray || function isArray(argument) {
+    return classof(argument) == 'Array';
+  };
+
+  var $$1 = _export;
+  var uncurryThis$1 = functionUncurryThis;
+  var isArray = isArray$1;
+
+  var un$Reverse = uncurryThis$1([].reverse);
+  var test = [1, 2];
+
+  // `Array.prototype.reverse` method
+  // https://tc39.es/ecma262/#sec-array.prototype.reverse
+  // fix for Safari 12.0 bug
+  // https://bugs.webkit.org/show_bug.cgi?id=188794
+  $$1({ target: 'Array', proto: true, forced: String(test) === String(test.reverse()) }, {
+    reverse: function reverse() {
+      // eslint-disable-next-line no-self-assign -- dirty hack
+      if (isArray(this)) this.length = this.length;
+      return un$Reverse(this);
+    }
+  });
+
+  var path$1 = path$6;
+
+  var entryVirtual$1 = function (CONSTRUCTOR) {
+    return path$1[CONSTRUCTOR + 'Prototype'];
+  };
+
+  var entryVirtual = entryVirtual$1;
+
+  var reverse$3 = entryVirtual('Array').reverse;
+
+  var isPrototypeOf = objectIsPrototypeOf;
+  var method = reverse$3;
+
+  var ArrayPrototype = Array.prototype;
+
+  var reverse$2 = function (it) {
+    var own = it.reverse;
+    return it === ArrayPrototype || (isPrototypeOf(ArrayPrototype, it) && own === ArrayPrototype.reverse) ? method : own;
+  };
+
+  var parent = reverse$2;
+
+  var reverse$1 = parent;
+
+  var reverse = reverse$1;
 
   var uncurryThis = functionUncurryThis;
 
@@ -937,16 +991,16 @@ var SlowingDownRotation = (function () {
     setInterval: wrap(global$1.setInterval)
   });
 
-  var path = path$5;
+  var path = path$6;
 
   var setTimeout$1 = path.setTimeout;
 
   var setTimeout = setTimeout$1;
 
   var defaultProperty = {
-    currentPlayCount: null,
-    playCount: null,
-    currentIndex: 0,
+    currentPlayCount: 0,
+    playCount: 0,
+    currentIndex: -1,
     stopIndex: null,
     slowDownStartindex: null,
     isSlowdown: false,
@@ -959,9 +1013,11 @@ var SlowingDownRotation = (function () {
     targetElement: null,
     itemElements: null,
     speed: 100,
+    startIndex: 2,
     stopIndex: 0,
     playCount: 3,
     autoStart: false,
+    reverse: false,
     stopCallback: function stopCallback() {},
     startCallback: function startCallback() {},
     slowDownCallback: function slowDownCallback() {}
@@ -989,6 +1045,12 @@ var SlowingDownRotation = (function () {
         assign(this, {
           options: assign({}, defaultProperty, defaultSetting, options)
         });
+
+        if (!reverse(this.options)) {
+          this.options.currentIndex = options.startIndex ? options.startIndex - 1 : defaultSetting.startIndex - 1;
+        } else {
+          this.options.currentIndex = options.startIndex ? options.startIndex : defaultSetting.startIndex;
+        }
       }
     }, {
       key: "start",
@@ -1021,7 +1083,6 @@ var SlowingDownRotation = (function () {
           if (options.itemElements.length >= options.stopIndex && options.stopIndex >= 0) {
             options.isSlowdown = true;
             options.currentPlayCount = 0;
-            options.itemElements[options.currentIndex].classList.remove('is-active');
             this.roll(Math.max(1, Math.ceil(20 / options.itemElements.length)), options.speed);
             options.slowDownCallback();
           }
@@ -1031,16 +1092,17 @@ var SlowingDownRotation = (function () {
       key: "reset",
       value: function reset() {
         var options = this.options;
-        options.playCount = defaultProperty.playCount;
-        options.currentIndex = defaultProperty.currentIndex;
-        options.slowDownStartindex = defaultProperty.slowDownStartindex;
-        options.isSlowdown = defaultProperty.isSlowdown;
-        options.isStop = defaultProperty.isStop;
 
         if (options.countTimer) {
           clearTimeout(options.countTimer);
           options.countTimer = null;
         }
+
+        options.playCount = defaultProperty.playCount;
+        options.currentIndex = options.startIndex - 1;
+        options.slowDownStartindex = defaultProperty.slowDownStartindex;
+        options.isSlowdown = defaultProperty.isSlowdown;
+        options.isStop = defaultProperty.isStop;
       }
     }, {
       key: "roll",
@@ -1050,44 +1112,129 @@ var SlowingDownRotation = (function () {
         var options = this.options;
 
         if (options.isSlowdown) {
-          if (options.currentPlayCount > _count && options.currentIndex - 1 === options.stopIndex) {
+          if (options.currentPlayCount > _count && options.currentIndex === options.stopIndex) {
             this.reset();
             return;
           }
 
           _speed = Math.floor(_speed + _count * (options.currentIndex * options.currentPlayCount));
         } else {
-          if (options.currentPlayCount > _count) {
+          if (options.currentPlayCount === _count) {
             this.stop();
             return;
           }
         }
 
-        this.output();
-        options.currentIndex++;
-
-        if (options.currentIndex >= options.itemElements.length) {
-          options.currentIndex = 0;
-          options.currentPlayCount++;
-        }
-
+        this.controllIndex();
         options.countTimer = setTimeout(function () {
           _this.roll(_count, _speed);
         }, _speed);
       }
     }, {
-      key: "output",
-      value: function output() {
+      key: "controllIndex",
+      value: function controllIndex() {
         var options = this.options;
-        var activeClass = 'is-active';
-        var prevIndex = options.currentIndex - 1;
+        var index = {
+          xPrev: null,
+          prev: null,
+          current: null,
+          next: null,
+          xNext: null
+        };
 
-        if (prevIndex < 0) {
-          prevIndex = options.itemElements.length - 1;
+        if (!reverse(options)) {
+          options.currentIndex++;
+
+          if (options.currentIndex === options.itemElements.length) {
+            options.currentIndex = 0;
+            options.currentPlayCount++;
+          }
+
+          index.prev = options.currentIndex - 1;
+
+          if (index.prev < 0) {
+            index.prev = options.itemElements.length - 1;
+          }
+
+          index.xPrev = index.prev - 1;
+
+          if (index.xPrev < 0) {
+            index.xPrev = options.itemElements.length - 1;
+          }
+
+          index.next = options.currentIndex + 1;
+
+          if (index.next === options.itemElements.length) {
+            index.next = 0;
+          }
+
+          index.current = options.currentIndex;
+        } else {
+          options.currentIndex--;
+
+          if (options.currentIndex === -1) {
+            options.currentIndex = options.itemElements.length - 1;
+          }
+
+          if (options.currentIndex === 0) {
+            options.currentPlayCount++;
+          }
+
+          index.prev = options.currentIndex - 1;
+
+          if (index.prev < 0) {
+            index.prev = options.itemElements.length - 1;
+          }
+
+          index.next = options.currentIndex + 1;
+
+          if (index.next === options.itemElements.length) {
+            index.next = 0;
+          }
+
+          if (index.next < 0) {
+            index.next = options.itemElements.length - 1;
+          }
+
+          index.xNext = index.next + 1;
+
+          if (index.xNext === options.itemElements.length) {
+            index.xNext = 0;
+          }
+
+          index.current = options.currentIndex;
         }
 
-        options.itemElements[prevIndex].classList.remove(activeClass);
-        options.itemElements[options.currentIndex].classList.add(activeClass);
+        this.output(index);
+      }
+    }, {
+      key: "output",
+      value: function output(index) {
+        var options = this.options;
+        var xPrev = index.xPrev,
+            xNext = index.xNext,
+            prev = index.prev,
+            current = index.current,
+            next = index.next;
+        var activeClass = 'sdr-active';
+        var prevClass = 'sdr-prev';
+        var nextClass = 'sdr-next';
+
+        if (!reverse(options)) {
+          options.itemElements[xPrev].classList.remove(prevClass);
+          options.itemElements[prev].classList.add(prevClass);
+          options.itemElements[prev].classList.remove(activeClass);
+          options.itemElements[current].classList.add(activeClass);
+          options.itemElements[current].classList.remove(nextClass);
+          options.itemElements[next].classList.add(nextClass);
+        } else {
+          options.itemElements[current].classList.remove(prevClass);
+          options.itemElements[next].classList.remove(activeClass);
+          options.itemElements[xNext].classList.remove(nextClass);
+          options.itemElements[current].classList.add(activeClass);
+          options.itemElements[next].classList.add(nextClass);
+          options.itemElements[prev].classList.add(prevClass);
+        }
       }
     }]);
 

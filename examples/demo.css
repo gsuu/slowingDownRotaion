@@ -11,6 +11,6 @@ ul, ol, dl {
   display: none;
 }
 
-.sdr-motion__item.is-active {
+.sdr-motion__item.sdr-active {
   display: block;
 }
