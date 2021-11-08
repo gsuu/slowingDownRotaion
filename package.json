@@ -1,6 +1,6 @@
 {
   "name": "slowing-down-rotation",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "jisu kwak <gsuu.kwak@gmail.com> (gsuu.kwak@gmail.com)",
   "license": "MIT",
   "main": "dist/slowingDownRotation.min.js",
@@ -12,7 +12,13 @@
     "url": "https://github.com/gsuu/slowingDownRotaion/issues",
     "email": "gsuu.kwak@gmail.com"
   },
-  "keywords": ["javascript","animation","slowingDown","html","css"],
+  "keywords": [
+    "javascript",
+    "animation",
+    "slowingDown",
+    "html",
+    "css"
+  ],
   "files": [
     "dist",
     "examples",
