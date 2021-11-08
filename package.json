@@ -5,10 +5,6 @@
   "license": "MIT",
   "main": "dist/slowingDownRotation.esm.js",
   "browser": "dist/slowingDownRotation.umd.js",
-  "exports": {
-    ".": "./dist/slowingDownRotation.js",
-    "./package.json": "./package.json"
-  },
   "files": [
     "./dist/*"
   ],
