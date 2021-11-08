@@ -1,4 +1,4 @@
-const roulette = new slowingDownRotation({
+const roulette = new SlowingDownRotation({
   wrapperElement: document.querySelector('.demo__wrapper'),
   targetElement: document.querySelector('.demo__list'),
   itemElements: document.querySelectorAll('.demo__item'),
